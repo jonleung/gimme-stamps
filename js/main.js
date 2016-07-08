@@ -6,6 +6,10 @@ var counter;
 
 firebase.database().ref('/counter').once('value').then(function(snapshot) {
   counter = snapshot.val();
+  var numLeft = 21 + 1 - counter;
+  $(".num-stamps-left").html(numLeft);
+  $(".num-stamps-left-minus-one").html(numLeft-1);
+
 });
 
 
